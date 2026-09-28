@@ -26,7 +26,7 @@
       <a href="#p3"><b>3</b> Ver se já tem Python</a>
       <a href="#px" class="opt">Instalar o Python (se faltar)</a>
       <a href="#p4"><b>4</b> Instalar as bibliotecas</a>
-      <a href="#p5"><b>5</b> Rodar os scripts</a>
+      <a href="#p5"><b>5</b> Gerar e conferir</a>
       <a href="#p6"><b>6</b> Abrir a planilha</a>
       <a href="#erros">Se der erro</a>
     </nav>
@@ -323,21 +323,27 @@ Installing collected packages: …
 <section class="step" id="p5">
   <div class="txt">
     <p class="n">Passo 5</p>
-    <h2>Rodar os scripts</h2>
-    <h3>5.1 Conferir (não altera nada)</h3>
-    <div class="cc"><code>python3 codigo/VERIFICA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div>
-    <p>Leva alguns segundos. Deu certo se terminar com <code>OK: (1) 100% IDENTICO</code>. Se a planilha já foi preenchida à mão, ele lista diferenças; nesse caso é esperado.</p>
+    <h2>Gerar e conferir a planilha</h2>
 
-    <h3>5.2 Gerar a planilha</h3>
-    <p class="note warn">Este script <b>substitui</b> a planilha <code>TRABALHO LAERTE - …xlsx</code>. Se você já preencheu alguma coluna nela, faça uma cópia antes com o comando abaixo. Feche a planilha no Excel antes de rodar.</p>
+    <h3>5.1 Gerar</h3>
+    <p>O script lê as três planilhas originais da pasta (v8, Editável Demanda e Vertical da TI) e monta a planilha <code>TRABALHO LAERTE - …xlsx</code>.</p>
+    <p class="note warn">A planilha gerada <b>substitui</b> a que está na pasta. Se você já preencheu alguma nota nela, faça uma cópia antes com o comando abaixo. Feche a planilha no Excel antes de rodar.</p>
     <div class="cc"><code>cp "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx" "COPIA - planilha preenchida.xlsx"</code><button type="button">Copiar</button></div>
     <div class="cc"><code>python3 codigo/GERA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div>
     <p>Deu certo se aparecer <code>OK - arquivo gerado:</code> seguido do caminho da planilha.</p>
+
+    <h3>5.2 Conferir</h3>
+    <p>O script de conferência gera a planilha de novo, num arquivo temporário, e compara célula por célula com a da pasta. Depois refaz a conta dos capítulos por outro caminho. Não altera nada.</p>
+    <div class="cc"><code>python3 codigo/VERIFICA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div>
+    <p>Deu certo se terminar com <code>OK: (1) 100% IDENTICO</code>. Se a planilha já tiver notas preenchidas à mão, ele lista as diferenças; nesse caso é esperado.</p>
   </div>
   <div class="shots">
     <figure class="win term" data-play>
       <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte — -zsh — 80×24</span></div>
       <div class="body tb">
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 codigo/GERA_PLANILHA_LAERTE.py">python3 codigo/GERA_PLANILHA_LAERTE.py</span></div>
+        <div class="ln o"><span class="ok">OK - arquivo gerado:</span> /Users/seunome/Downloads/Universal2026 - Pacote Laerte/TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx
+<span class="gap">(linhas de contagem)</span></div>
         <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 codigo/VERIFICA_PLANILHA_LAERTE.py">python3 codigo/VERIFICA_PLANILHA_LAERTE.py</span></div>
         <div class="ln o">--- saida do gerador ---
 OK - arquivo gerado: /Users/seunome/Downloads/Universal2026 - Pacote Laerte/_VERIFICACAO_TEMP.xlsx
@@ -350,9 +356,6 @@ AD recalculado da formula (S+T+U+V+W+X*10+Y*5+AC) e AE:
 <span class="ok">OK: (1) 100% IDENTICO</span> entre o arquivo entregue e a saida do GERA_PLANILHA_LAERTE.py;
 (2) recalculo INDEPENDENTE dos capitulos (X/Y) confere com a planilha; X/Y guardam
 NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
-        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 codigo/GERA_PLANILHA_LAERTE.py">python3 codigo/GERA_PLANILHA_LAERTE.py</span></div>
-        <div class="ln o"><span class="ok">OK - arquivo gerado:</span> /Users/seunome/Downloads/Universal2026 - Pacote Laerte/TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx
-<span class="gap">(linhas de contagem)</span></div>
         <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="caret"></span></div>
       </div>
       <button type="button" class="replay">Reproduzir</button>
@@ -369,7 +372,7 @@ NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
     <p>Dê dois cliques na planilha no Finder, ou abra pelo Terminal:</p>
     <div class="cc"><code>open "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx"</code><button type="button">Copiar</button></div>
     <p>Use o Excel. Os comentários das colunas T a Y aparecem ao passar o mouse sobre as células. O Numbers abre o arquivo, mas não salve por cima com ele.</p>
-    <p class="note">Das próximas vezes: passo 2 (abrir o Terminal na pasta) e passo 5 (rodar).</p>
+    <p class="note">Das próximas vezes: passo 2 (abrir o Terminal na pasta) e passo 5 (gerar e conferir).</p>
   </div>
 </section>
 
