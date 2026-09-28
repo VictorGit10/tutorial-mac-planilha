@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerar a planilha no Mac</title>
+<meta name="description" content="Passo a passo para rodar os scripts Python da pasta codigo num Mac.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Gerar a planilha no Mac</h1>
+    <p class="lead">Passo a passo para rodar os scripts da pasta <code>codigo</code> num Mac. Na primeira vez leva uns 15 minutos. Das próximas vezes, basta fazer os passos <a href="#p3">3</a> e <a href="#p5">5</a>.</p>
+    <div class="need">
+      <strong>Você vai precisar de:</strong>
+      <ul>
+        <li>um Mac com internet</li>
+        <li>o arquivo <code>Universal2026 - Pacote Laerte.zip</code></li>
+        <li>a senha do Mac (para instalar o Python)</li>
+      </ul>
+    </div>
+    <nav class="toc" aria-label="Passos">
+      <a href="#p1"><b>1</b> Instalar o Python</a>
+      <a href="#p2"><b>2</b> Descompactar a pasta</a>
+      <a href="#p3"><b>3</b> Abrir o Terminal na pasta</a>
+      <a href="#p4"><b>4</b> Instalar as bibliotecas</a>
+      <a href="#p5"><b>5</b> Rodar os scripts</a>
+      <a href="#p6"><b>6</b> Abrir a planilha</a>
+      <a href="#erros">Se der erro</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ PASSO 1 ============ -->
+<section class="step" id="p1">
+  <div class="txt">
+    <p class="n">Passo 1 <span>só na primeira vez</span></p>
+    <h2>Instalar o Python</h2>
+    <p>O Mac não vem com o Python pronto para uso. Instale a versão oficial.</p>
+    <ol>
+      <li>Abra <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a> e clique no botão amarelo <b>Download Python 3.x.x</b>. O número pode ser outro; qualquer versão 3.12 ou mais nova serve.</li>
+      <li>Abra o arquivo baixado (<code>python-3.x.x-macos11.pkg</code>, na pasta Transferências).</li>
+      <li>Clique em <b>Continuar</b> em cada tela. Na licença, clique em <b>Concordo</b>. Depois, <b>Instalar</b> e digite a senha do Mac.</li>
+      <li>Na mensagem de instalação concluída, clique em <b>Fechar</b>. Pode fechar também a janela do Finder que abre sozinha.</li>
+    </ol>
+    <p class="note">Se o Mac oferecer instalar as “ferramentas de linha de comando”, clique em <b>Cancelar</b>. Não são necessárias.</p>
+  </div>
+  <div class="shots">
+    <figure class="win browser">
+      <div class="bar"><i></i><i></i><i></i><span class="url">python.org/downloads/</span></div>
+      <div class="body pyorg">
+        <p class="pyh">Download the latest version for macOS</p>
+        <span class="pybtn">Download Python 3.x.x</span>
+        <p class="pysub">Looking for Python with a different OS? …</p>
+      </div>
+    </figure>
+    <figure class="win installer">
+      <div class="bar"><i></i><i></i><i></i><span class="title">Instalar Python</span></div>
+      <div class="body inst">
+        <ul class="inst-side">
+          <li class="on">Introdução</li><li>Leia-me</li><li>Licença</li><li>Destino</li><li>Tipo de Instalação</li><li>Instalação</li><li>Resumo</li>
+        </ul>
+        <div class="inst-main">
+          <span class="ph"></span><span class="ph"></span><span class="ph s"></span>
+          <div class="inst-btns"><span class="btn">Voltar</span><span class="btn pri">Continuar</span></div>
+        </div>
+      </div>
+    </figure>
+    <p class="seq">Continuar › Continuar › Continuar › <b>Concordo</b> › <b>Instalar</b> › senha › <b>Fechar</b></p>
+  </div>
+</section>
+
+<!-- ============ PASSO 2 ============ -->
+<section class="step" id="p2">
+  <div class="txt">
+    <p class="n">Passo 2</p>
+    <h2>Descompactar a pasta</h2>
+    <ol>
+      <li>No Finder, vá até onde salvou o zip (normalmente <b>Transferências</b>) e dê dois cliques em <code>Universal2026 - Pacote Laerte.zip</code>. Aparece uma pasta com o mesmo nome.</li>
+      <li>Abra a pasta e confira: a pasta <code>codigo</code> fica junto com as planilhas, no mesmo nível.</li>
+    </ol>
+    <p class="note warn">Não renomeie nem mova nada lá dentro. Os scripts procuram as planilhas pelo nome exato. Se o Mac criar cópias como <code>arquivo (1).xlsx</code> por download repetido, apague a pasta e descompacte de novo.</p>
+  </div>
+  <div class="shots">
+    <figure class="win finder">
+      <div class="bar"><i></i><i></i><i></i><span class="title">Transferências</span></div>
+      <div class="body fnd">
+        <ul class="side">
+          <li class="h">Favoritos</li><li>AirDrop</li><li>Recentes</li><li>Aplicativos</li><li class="on">Transferências</li><li>Mesa</li><li>Documentos</li>
+        </ul>
+        <div class="icons">
+          <div class="ic"><span class="zip"></span>Universal2026 - Pacote Laerte.zip</div>
+          <div class="ic sel"><span class="folder"></span>Universal2026 - Pacote Laerte</div>
+        </div>
+      </div>
+    </figure>
+    <figure class="win finder">
+      <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte</span></div>
+      <div class="body list">
+        <div class="lh"><span>Nome</span><span>Tipo</span></div>
+        <div class="li"><span class="f x"></span>Auditoria - Inconsistencias Pontuacao Universal 2026.xlsx<em>Excel</em></div>
+        <div class="li"><span class="f x"></span>CA-CG - Planilha Final de Pontuação - Edital Universal - v8.xlsx<em>Excel</em></div>
+        <div class="li"><span class="f p"></span>Chamada_Universal_06_2026_corrigida_24julho2026.pdf<em>PDF</em></div>
+        <div class="li sel"><span class="f d"></span>codigo<em>Pasta</em></div>
+        <div class="li"><span class="f x"></span>Demanda Universal 2026.xlsx<em>Excel</em></div>
+        <div class="li"><span class="f x"></span>Editável Demanda Universal 2026.xlsx<em>Excel</em></div>
+        <div class="li more">… mais 9 arquivos (PDFs, planilhas, LEIA-ME, CSV)</div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ PASSO 3 ============ -->
+<section class="step" id="p3">
+  <div class="txt">
+    <p class="n">Passo 3</p>
+    <h2>Abrir o Terminal na pasta</h2>
+    <ol>
+      <li>Aperte <kbd>⌘ Command</kbd> + <kbd>espaço</kbd>, digite <b>terminal</b> e aperte <kbd>Enter</kbd>.</li>
+      <li>No Terminal, digite <code>cd</code> e <b>um espaço</b>. Não aperte Enter ainda.</li>
+      <li>Arraste a pasta <code>Universal2026 - Pacote Laerte</code> do Finder para dentro da janela do Terminal. O caminho da pasta aparece escrito.</li>
+      <li>Aperte <kbd>Enter</kbd>. O nome da pasta passa a aparecer antes do <code>%</code>.</li>
+      <li>Para conferir, digite <code>ls</code> e aperte <kbd>Enter</kbd>. Tem que aparecer a lista de arquivos, com <code>codigo</code> no fim.</li>
+    </ol>
+    <div class="cc"><code>ls</code><button type="button">Copiar</button></div>
+    <p class="note">Se o Mac perguntar se o Terminal pode acessar a pasta Transferências, clique em <b>Permitir</b>. No Terminal essa pasta se chama <code>Downloads</code>; é a mesma.</p>
+    <details>
+      <summary>Outra forma: botão direito na pasta</summary>
+      <p>Precisa ativar uma vez: menu  › <b>Ajustes do Sistema</b> › <b>Teclado</b> › botão <b>Atalhos de Teclado…</b> › <b>Serviços</b> › <b>Arquivos e Pastas</b> › marque <b>Novo Terminal na Pasta</b>.</p>
+      <p>Depois disso, clique com o botão direito na pasta (ou Control + clique) › <b>Serviços</b> › <b>Novo Terminal na Pasta</b>. O Terminal já abre dentro dela e você pode pular para o item 5 acima.</p>
+      <div class="menu">
+        <div>Abrir</div><div>Abrir em Nova Aba</div><hr><div>Obter Informações</div><div>Renomear</div><div>Comprimir “Universal2026 - Pacote Laerte”</div><hr>
+        <div class="sub">Serviços <span>›</span>
+          <div class="submenu"><div class="on">Novo Terminal na Pasta</div><div>Nova Aba do Terminal na Pasta</div></div>
+        </div>
+      </div>
+    </details>
+  </div>
+  <div class="shots">
+    <figure class="spot">
+      <div class="spot-bar"><span class="mag"></span>terminal</div>
+      <div class="spot-res"><span class="term-ic">&gt;_</span><b>Terminal</b><em>Aplicativo</em></div>
+    </figure>
+    <figure class="win term" data-play>
+      <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte — -zsh — 80×24</span></div>
+      <div class="body tb">
+        <div class="ln"><span class="ps">seunome@MacBook ~ %</span> <span class="cmd" data-t="cd ">cd </span><span class="drop">/Users/seunome/Downloads/Universal2026\ -\ Pacote\ Laerte</span></div>
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="ls">ls</span></div>
+        <div class="ln o">Auditoria - Inconsistencias Pontuacao Universal 2026.xlsx
+CA-CG - Planilha Final de Pontuação - Edital Universal - v8.xlsx
+Chamada_Universal_06_2026_corrigida_24julho2026.pdf
+Demanda Universal 2026.xlsx
+Editável Demanda Universal 2026.xlsx
+FAQ_Chamada_Universal_06_2026_atualizado_23_07.pdf
+Informes Gerais CAs_UNIVERSAL.pdf
+Instruções Rodrigo Universal 2026.pdf
+LEIA-ME - Estrutura da Pasta Universal 2026.md
+Processos Edital Universal 6_2026 - CA-GC.xlsx
+ROTEIRO PARA EMISSÃO DO PARECER.pdf
+TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx
+Ultima Versao Planilha Vertical de Pontuação TI CNPq-23set26.xlsx
+<span class="hl">codigo</span>
+scimagojr 2025.csv</div>
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="caret"></span></div>
+      </div>
+      <button type="button" class="replay">Reproduzir</button>
+    </figure>
+    <p class="cap">O texto em azul é o que aparece quando você solta a pasta no Terminal. <code>seunome</code> e <code>MacBook</code> mudam de Mac para Mac.</p>
+    <figure class="alert">
+      <span class="alert-ic">&gt;_</span>
+      <p><b>“Terminal” gostaria de acessar arquivos na sua pasta Transferências.</b></p>
+      <div class="alert-btns"><span class="btn">Não Permitir</span><span class="btn pri">Permitir</span></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ PASSO 4 ============ -->
+<section class="step" id="p4">
+  <div class="txt">
+    <p class="n">Passo 4 <span>só na primeira vez</span></p>
+    <h2>Instalar as bibliotecas</h2>
+    <p>Com o Terminal aberto na pasta, confira se o Python está instalado:</p>
+    <div class="cc"><code>python3 --version</code><button type="button">Copiar</button></div>
+    <p>Deve responder <code>Python 3.</code> seguido da versão. Depois instale as duas bibliotecas que os scripts usam:</p>
+    <div class="cc"><code>python3 -m pip install pandas openpyxl</code><button type="button">Copiar</button></div>
+    <p>Espere o <code>%</code> voltar. Deu certo se a última linha começar com <code>Successfully installed</code>. Se aparecer um aviso de que há uma versão nova do pip, ignore.</p>
+    <p class="note">No Mac o comando é sempre <code>python3</code>, nunca <code>python</code>.</p>
+  </div>
+  <div class="shots">
+    <figure class="win term" data-play>
+      <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte — -zsh — 80×24</span></div>
+      <div class="body tb">
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 --version">python3 --version</span></div>
+        <div class="ln o">Python 3.14.2</div>
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 -m pip install pandas openpyxl">python3 -m pip install pandas openpyxl</span></div>
+        <div class="ln o">Collecting pandas
+Collecting openpyxl
+<span class="gap">(várias linhas de download)</span>
+Installing collected packages: pytz, tzdata, six, numpy, et-xmlfile, python-dateutil, openpyxl, pandas
+<span class="ok">Successfully installed</span> et-xmlfile-2.0.0 numpy-2.3.4 openpyxl-3.1.5 pandas-2.3.3 python-dateutil-2.9.0.post0 pytz-2025.2 six-1.17.0 tzdata-2025.2</div>
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="caret"></span></div>
+      </div>
+      <button type="button" class="replay">Reproduzir</button>
+    </figure>
+    <p class="cap">Os números de versão no seu Mac podem ser outros.</p>
+  </div>
+</section>
+
+<!-- ============ PASSO 5 ============ -->
+<section class="step" id="p5">
+  <div class="txt">
+    <p class="n">Passo 5</p>
+    <h2>Rodar os scripts</h2>
+    <h3>5.1 Conferir (não altera nada)</h3>
+    <div class="cc"><code>python3 codigo/VERIFICA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div>
+    <p>Leva alguns segundos. Deu certo se terminar com <code>OK: (1) 100% IDENTICO</code>. Se a planilha já foi preenchida à mão, ele lista diferenças; nesse caso é esperado.</p>
+
+    <h3>5.2 Gerar a planilha</h3>
+    <p class="note warn">Este script <b>substitui</b> a planilha <code>TRABALHO LAERTE - …xlsx</code>. Se você já preencheu alguma coluna nela, faça uma cópia antes com o comando abaixo. Feche a planilha no Excel antes de rodar.</p>
+    <div class="cc"><code>cp "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx" "COPIA - planilha preenchida.xlsx"</code><button type="button">Copiar</button></div>
+    <div class="cc"><code>python3 codigo/GERA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div>
+    <p>Deu certo se aparecer <code>OK - arquivo gerado:</code> seguido do caminho da planilha.</p>
+  </div>
+  <div class="shots">
+    <figure class="win term" data-play>
+      <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte — -zsh — 80×24</span></div>
+      <div class="body tb">
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 codigo/VERIFICA_PLANILHA_LAERTE.py">python3 codigo/VERIFICA_PLANILHA_LAERTE.py</span></div>
+        <div class="ln o">--- saida do gerador ---
+OK - arquivo gerado: /Users/seunome/Downloads/Universal2026 - Pacote Laerte/_VERIFICACAO_TEMP.xlsx
+<span class="gap">(linhas de contagem)</span>
+
+AD recalculado da formula (S+T+U+V+W+X*10+Y*5+AC) e AE:
+<span class="gap">(uma linha por proposta)</span>
+
+================= RESULTADO =================
+<span class="ok">OK: (1) 100% IDENTICO</span> entre o arquivo entregue e a saida do GERA_PLANILHA_LAERTE.py;
+(2) recalculo INDEPENDENTE dos capitulos (X/Y) confere com a planilha; X/Y guardam
+NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 codigo/GERA_PLANILHA_LAERTE.py">python3 codigo/GERA_PLANILHA_LAERTE.py</span></div>
+        <div class="ln o"><span class="ok">OK - arquivo gerado:</span> /Users/seunome/Downloads/Universal2026 - Pacote Laerte/TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx
+<span class="gap">(linhas de contagem)</span></div>
+        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="caret"></span></div>
+      </div>
+      <button type="button" class="replay">Reproduzir</button>
+    </figure>
+    <p class="cap">As linhas em cinza foram resumidas aqui. No seu Terminal aparecem completas.</p>
+  </div>
+</section>
+
+<!-- ============ PASSO 6 ============ -->
+<section class="step" id="p6">
+  <div class="txt">
+    <p class="n">Passo 6</p>
+    <h2>Abrir a planilha</h2>
+    <p>Dê dois cliques na planilha no Finder, ou abra pelo Terminal:</p>
+    <div class="cc"><code>open "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx"</code><button type="button">Copiar</button></div>
+    <p>Use o Excel. Os comentários das colunas T a Y aparecem ao passar o mouse sobre as células. O Numbers abre o arquivo, mas não salve por cima com ele.</p>
+    <p class="note">Das próximas vezes: passo 3 (abrir o Terminal na pasta) e passo 5 (rodar).</p>
+  </div>
+</section>
+
+<!-- ============ ERROS ============ -->
+<section class="errs" id="erros">
+  <h2>Se der erro</h2>
+  <div class="tw">
+  <table>
+    <thead><tr><th>Mensagem no Terminal</th><th>O que fazer</th></tr></thead>
+    <tbody>
+      <tr><td><code>command not found: python</code></td><td>Use <code>python3</code>.</td></tr>
+      <tr><td><code>command not found: python3</code>, ou janela pedindo “ferramentas de linha de comando”</td><td>O Python não foi instalado (passo 1), ou o Terminal estava aberto durante a instalação. Feche o Terminal com <kbd>⌘ Q</kbd>, abra de novo e refaça o passo 3.</td></tr>
+      <tr><td><code>ModuleNotFoundError: No module named 'pandas'</code> (ou <code>'openpyxl'</code>)</td><td>Faça o passo 4.</td></tr>
+      <tr><td><code>error: externally-managed-environment</code></td><td>
+        O Python instalado é o do Homebrew. Rode estes três comandos, um de cada vez:
+        <div class="cc"><code>python3 -m venv ~/venv-planilha</code><button type="button">Copiar</button></div>
+        <div class="cc"><code>source ~/venv-planilha/bin/activate</code><button type="button">Copiar</button></div>
+        <div class="cc"><code>pip install pandas openpyxl</code><button type="button">Copiar</button></div>
+        Toda vez que abrir o Terminal, rode o comando do meio antes do passo 5.
+      </td></tr>
+      <tr><td><code>cd: no such file or directory</code></td><td>Digite <code>cd</code>, um espaço, e arraste a pasta de novo. Não digite o caminho à mão.</td></tr>
+      <tr><td><code>can't open file … VERIFICA_PLANILHA_LAERTE.py</code> ou <code>FileNotFoundError … .xlsx</code></td><td>O Terminal não está na pasta certa, ou algum arquivo foi renomeado ou movido. Rode <code>ls</code> e compare com a lista do passo 3.</td></tr>
+      <tr><td><code>PermissionError</code> ou <code>Operation not permitted</code></td><td>Feche a planilha no Excel. Se continuar, vá em  › Ajustes do Sistema › Privacidade e Segurança › Arquivos e Pastas › Terminal e ative <b>Pasta Transferências</b>.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <p>Os dados das planilhas não estão neste site. Tudo roda no seu Mac, sobre os arquivos da pasta.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
