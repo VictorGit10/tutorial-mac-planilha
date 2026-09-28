@@ -383,3 +383,21 @@ kbd.big.wide { min-width: 80px; font-size: 12px; font-family: var(--sans); }
 .note p { margin: 0; }
 .txt ul { padding-left: 22px; margin-bottom: 0; }
 .txt ul li + li { margin-top: 8px; }
+
+/* anatomia da linha do cd */
+.anat { background: var(--term-bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.anat-line { font: 13px/1.6 var(--mono); color: var(--term-ink); word-break: break-all; }
+.seg { border-radius: 4px; padding: 1px 2px; }
+.seg.you { background: #ffe3a3; color: #4a3200; font-weight: 700; }
+.seg.mac { background: var(--accent-soft); color: var(--term-drop); }
+.anat-keys { display: grid; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 14px; }
+.anat-keys p { margin: 0; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.sw.you { background: #ffe3a3; border: 1px solid #d8a93a; }
+.sw.mac { background: var(--accent-soft); border: 1px solid var(--accent); }
+
+/* quadro de detalhes: não é passo */
+.details { border-left: 3px solid var(--line); padding: 2px 0 2px 14px; font-size: 14.5px; color: var(--muted); display: grid; gap: 6px; }
+.details p { margin: 0; }
+.details b { color: var(--ink); }
+.details-h { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }

@@ -127,19 +127,28 @@
   <div class="sub-step">
     <div class="txt">
       <h3><span class="k">2.2</span> Entrar na pasta arrastando</h3>
-      <p>Esta é a parte que mais confunde. Veja a animação e depois faça igual.</p>
+      <p>Para o Terminal entrar numa pasta, usa-se o comando <code>cd</code> seguido do endereço da pasta. Esse endereço é longo e fácil de errar, então você não vai digitá-lo: digita só <code>cd</code> e um espaço, e arrasta a pasta para dentro do Terminal. Ao soltar, o Mac escreve o endereço sozinho.</p>
+      <figure class="anat">
+        <div class="anat-line"><span class="ps">seunome@MacBook ~ %</span> <span class="seg you">cd&nbsp;</span><span class="seg mac">/Users/seunome/Downloads/Universal2026\ -\ Pacote\ Laerte</span></div>
+        <div class="anat-keys">
+          <p><span class="sw you"></span><b>Você digita:</b> as letras <code>c</code> e <code>d</code> e um espaço.</p>
+          <p><span class="sw mac"></span><b>O Mac escreve</b> quando você solta a pasta. As barras <code>\</code> antes dos espaços são normais.</p>
+        </div>
+      </figure>
+      <p>Por isso a ordem importa: primeiro o <code>cd</code> e o espaço, depois a pasta, e só no fim o <kbd>Enter</kbd>. Veja a animação ao lado e depois faça igual.</p>
       <ol>
         <li>Deixe o Finder (com a pasta <code>Universal2026 - Pacote Laerte</code> à vista) e o Terminal lado a lado. Se o Terminal cobrir o Finder, arraste o Terminal pela barra de cima para o lado.</li>
-        <li>Clique na janela do Terminal e digite <code>cd</code> seguido de <b>um espaço</b>. <b>Não aperte Enter.</b></li>
+        <li>Clique dentro da janela do Terminal. Digite as letras <code>cd</code> e aperte a barra de espaço uma vez. <b>Não aperte Enter.</b></li>
         <li>No Finder, clique na pasta e <b>segure o botão</b>. Sem soltar, arraste até dentro da janela do Terminal.</li>
-        <li>Solte. O caminho da pasta aparece escrito depois do <code>cd</code>.</li>
+        <li>Solte. O endereço da pasta aparece escrito logo depois do <code>cd</code>.</li>
         <li>Agora sim, aperte <kbd>Enter</kbd>. O nome da pasta passa a aparecer antes do <code>%</code>.</li>
       </ol>
-      <ul class="tips">
-        <li>Arraste a <b>pasta</b> inteira, não um arquivo de dentro dela.</li>
-        <li>Se soltou antes de digitar o <code>cd</code>, ou se algo saiu errado, apague a linha com <kbd>control</kbd> + <kbd>U</kbd> e comece de novo.</li>
-        <li>Se o Mac perguntar se o Terminal pode acessar a pasta Transferências, clique em <b>Permitir</b>.</li>
-      </ul>
+      <aside class="details">
+        <p class="details-h">Detalhes</p>
+        <p><b>Pasta, não arquivo.</b> Arraste a pasta <code>Universal2026 - Pacote Laerte</code> inteira, não um arquivo de dentro dela.</p>
+        <p><b>Se errar.</b> Se soltou a pasta antes de digitar o <code>cd</code>, ou a linha ficou estranha, apague tudo com <kbd>control</kbd> + <kbd>U</kbd> e recomece do item 2.</p>
+        <p><b>Aviso de permissão.</b> Se o Mac perguntar se o Terminal pode acessar a pasta Transferências, clique em <b>Permitir</b>.</p>
+      </aside>
     </div>
 
     <div class="demo">
