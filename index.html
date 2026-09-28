@@ -12,19 +12,19 @@
 <header class="top">
   <div class="wrap">
     <h1>Gerar a planilha no Mac</h1>
-    <p class="lead">Passo a passo para rodar os scripts da pasta <code>codigo</code> num Mac. Na primeira vez leva uns 15 minutos. Das próximas vezes, basta fazer os passos <a href="#p3">3</a> e <a href="#p5">5</a>.</p>
+    <p class="lead">Passo a passo para rodar os scripts da pasta <code>codigo</code> num Mac. Na primeira vez leva de 5 a 15 minutos. Das próximas vezes, basta fazer os passos <a href="#p2">2</a> e <a href="#p5">5</a>.</p>
     <div class="need">
       <strong>Você vai precisar de:</strong>
       <ul>
         <li>um Mac com internet</li>
         <li>o arquivo <code>Universal2026 - Pacote Laerte.zip</code></li>
-        <li>a senha do Mac (para instalar o Python)</li>
       </ul>
     </div>
     <nav class="toc" aria-label="Passos">
-      <a href="#p1"><b>1</b> Instalar o Python</a>
-      <a href="#p2"><b>2</b> Descompactar a pasta</a>
-      <a href="#p3"><b>3</b> Abrir o Terminal na pasta</a>
+      <a href="#p1"><b>1</b> Descompactar a pasta</a>
+      <a href="#p2"><b>2</b> Abrir o Terminal na pasta</a>
+      <a href="#p3"><b>3</b> Ver se já tem Python</a>
+      <a href="#px" class="opt">Instalar o Python (se faltar)</a>
       <a href="#p4"><b>4</b> Instalar as bibliotecas</a>
       <a href="#p5"><b>5</b> Rodar os scripts</a>
       <a href="#p6"><b>6</b> Abrir a planilha</a>
@@ -38,46 +38,7 @@
 <!-- ============ PASSO 1 ============ -->
 <section class="step" id="p1">
   <div class="txt">
-    <p class="n">Passo 1 <span>só na primeira vez</span></p>
-    <h2>Instalar o Python</h2>
-    <p>O Mac não vem com o Python pronto para uso. Instale a versão oficial.</p>
-    <ol>
-      <li>Abra <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a> e clique no botão amarelo <b>Download Python 3.x.x</b>. O número pode ser outro; qualquer versão 3.12 ou mais nova serve.</li>
-      <li>Abra o arquivo baixado (<code>python-3.x.x-macos11.pkg</code>, na pasta Transferências).</li>
-      <li>Clique em <b>Continuar</b> em cada tela. Na licença, clique em <b>Concordo</b>. Depois, <b>Instalar</b> e digite a senha do Mac.</li>
-      <li>Na mensagem de instalação concluída, clique em <b>Fechar</b>. Pode fechar também a janela do Finder que abre sozinha.</li>
-    </ol>
-    <p class="note">Se o Mac oferecer instalar as “ferramentas de linha de comando”, clique em <b>Cancelar</b>. Não são necessárias.</p>
-  </div>
-  <div class="shots">
-    <figure class="win browser">
-      <div class="bar"><i></i><i></i><i></i><span class="url">python.org/downloads/</span></div>
-      <div class="body pyorg">
-        <p class="pyh">Download the latest version for macOS</p>
-        <span class="pybtn">Download Python 3.x.x</span>
-        <p class="pysub">Looking for Python with a different OS? …</p>
-      </div>
-    </figure>
-    <figure class="win installer">
-      <div class="bar"><i></i><i></i><i></i><span class="title">Instalar Python</span></div>
-      <div class="body inst">
-        <ul class="inst-side">
-          <li class="on">Introdução</li><li>Leia-me</li><li>Licença</li><li>Destino</li><li>Tipo de Instalação</li><li>Instalação</li><li>Resumo</li>
-        </ul>
-        <div class="inst-main">
-          <span class="ph"></span><span class="ph"></span><span class="ph s"></span>
-          <div class="inst-btns"><span class="btn">Voltar</span><span class="btn pri">Continuar</span></div>
-        </div>
-      </div>
-    </figure>
-    <p class="seq">Continuar › Continuar › Continuar › <b>Concordo</b> › <b>Instalar</b> › senha › <b>Fechar</b></p>
-  </div>
-</section>
-
-<!-- ============ PASSO 2 ============ -->
-<section class="step" id="p2">
-  <div class="txt">
-    <p class="n">Passo 2</p>
+    <p class="n">Passo 1</p>
     <h2>Descompactar a pasta</h2>
     <ol>
       <li>No Finder, vá até onde salvou o zip (normalmente <b>Transferências</b>) e dê dois cliques em <code>Universal2026 - Pacote Laerte.zip</code>. Aparece uma pasta com o mesmo nome.</li>
@@ -114,43 +75,127 @@
   </div>
 </section>
 
-<!-- ============ PASSO 3 ============ -->
-<section class="step" id="p3">
+<!-- ============ PASSO 2 ============ -->
+<section class="step wide" id="p2">
   <div class="txt">
-    <p class="n">Passo 3</p>
+    <p class="n">Passo 2</p>
     <h2>Abrir o Terminal na pasta</h2>
-    <ol>
-      <li>Aperte <kbd>⌘ Command</kbd> + <kbd>espaço</kbd>, digite <b>terminal</b> e aperte <kbd>Enter</kbd>.</li>
-      <li>No Terminal, digite <code>cd</code> e <b>um espaço</b>. Não aperte Enter ainda.</li>
-      <li>Arraste a pasta <code>Universal2026 - Pacote Laerte</code> do Finder para dentro da janela do Terminal. O caminho da pasta aparece escrito.</li>
-      <li>Aperte <kbd>Enter</kbd>. O nome da pasta passa a aparecer antes do <code>%</code>.</li>
-      <li>Para conferir, digite <code>ls</code> e aperte <kbd>Enter</kbd>. Tem que aparecer a lista de arquivos, com <code>codigo</code> no fim.</li>
-    </ol>
-    <div class="cc"><code>ls</code><button type="button">Copiar</button></div>
-    <p class="note">Se o Mac perguntar se o Terminal pode acessar a pasta Transferências, clique em <b>Permitir</b>. No Terminal essa pasta se chama <code>Downloads</code>; é a mesma.</p>
-    <details>
-      <summary>Outra forma: botão direito na pasta</summary>
-      <p>Precisa ativar uma vez: menu  › <b>Ajustes do Sistema</b> › <b>Teclado</b> › botão <b>Atalhos de Teclado…</b> › <b>Serviços</b> › <b>Arquivos e Pastas</b> › marque <b>Novo Terminal na Pasta</b>.</p>
-      <p>Depois disso, clique com o botão direito na pasta (ou Control + clique) › <b>Serviços</b> › <b>Novo Terminal na Pasta</b>. O Terminal já abre dentro dela e você pode pular para o item 5 acima.</p>
-      <div class="menu">
-        <div>Abrir</div><div>Abrir em Nova Aba</div><hr><div>Obter Informações</div><div>Renomear</div><div>Comprimir “Universal2026 - Pacote Laerte”</div><hr>
-        <div class="sub">Serviços <span>›</span>
-          <div class="submenu"><div class="on">Novo Terminal na Pasta</div><div>Nova Aba do Terminal na Pasta</div></div>
-        </div>
-      </div>
-    </details>
+    <p>O Terminal é o programa onde se digitam os comandos. Ele precisa estar “dentro” da pasta do pacote para os scripts acharem as planilhas.</p>
   </div>
-  <div class="shots">
-    <figure class="spot">
-      <div class="spot-bar"><span class="mag"></span>terminal</div>
-      <div class="spot-res"><span class="term-ic">&gt;_</span><b>Terminal</b><em>Aplicativo</em></div>
-    </figure>
-    <figure class="win term" data-play>
-      <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte — -zsh — 80×24</span></div>
-      <div class="body tb">
-        <div class="ln"><span class="ps">seunome@MacBook ~ %</span> <span class="cmd" data-t="cd ">cd </span><span class="drop">/Users/seunome/Downloads/Universal2026\ -\ Pacote\ Laerte</span></div>
-        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="ls">ls</span></div>
-        <div class="ln o">Auditoria - Inconsistencias Pontuacao Universal 2026.xlsx
+
+  <!-- 2.1 -->
+  <div class="sub-step">
+    <div class="txt">
+      <h3><span class="k">2.1</span> Abrir o Terminal</h3>
+      <ol>
+        <li>Aperte as teclas <kbd>⌘ command</kbd> e <kbd>espaço</kbd> juntas. Abre uma barra de busca no meio da tela (o Spotlight).</li>
+        <li>Digite <b>terminal</b>.</li>
+        <li>Aperte <kbd>Enter</kbd>. Abre uma janela com um texto terminado em <code>%</code>.</li>
+      </ol>
+      <details>
+        <summary>Não abriu? Pelo Finder</summary>
+        <p>Abra o Finder e vá em <b>Aplicativos</b> › pasta <b>Utilitários</b> › dois cliques em <b>Terminal</b>.</p>
+      </details>
+    </div>
+    <div class="flow">
+      <figure class="card">
+        <p class="tag">1</p>
+        <div class="keys"><kbd class="big">⌘<small>command</small></kbd><span>+</span><kbd class="big wide">espaço</kbd></div>
+        <figcaption>Aperte as duas juntas</figcaption>
+      </figure>
+      <figure class="card">
+        <p class="tag">2</p>
+        <div class="spot mini">
+          <div class="spot-bar"><span class="mag"></span>terminal</div>
+          <div class="spot-res"><span class="term-ic">&gt;_</span><b>Terminal</b></div>
+        </div>
+        <figcaption>Digite <b>terminal</b> e aperte Enter</figcaption>
+      </figure>
+      <figure class="card">
+        <p class="tag">3</p>
+        <div class="win term mini">
+          <div class="bar"><i></i><i></i><i></i><span class="title">seunome — -zsh — 80×24</span></div>
+          <div class="body tb">Last login: … on ttys000
+<span class="ps">seunome@MacBook ~ %</span> <span class="caret"></span></div>
+        </div>
+        <figcaption>O Terminal abre assim</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- 2.2 -->
+  <div class="sub-step">
+    <div class="txt">
+      <h3><span class="k">2.2</span> Entrar na pasta arrastando</h3>
+      <p>Esta é a parte que mais confunde. Veja a animação e depois faça igual.</p>
+      <ol>
+        <li>Deixe o Finder (com a pasta <code>Universal2026 - Pacote Laerte</code> à vista) e o Terminal lado a lado. Se o Terminal cobrir o Finder, arraste o Terminal pela barra de cima para o lado.</li>
+        <li>Clique na janela do Terminal e digite <code>cd</code> seguido de <b>um espaço</b>. <b>Não aperte Enter.</b></li>
+        <li>No Finder, clique na pasta e <b>segure o botão</b>. Sem soltar, arraste até dentro da janela do Terminal.</li>
+        <li>Solte. O caminho da pasta aparece escrito depois do <code>cd</code>.</li>
+        <li>Agora sim, aperte <kbd>Enter</kbd>. O nome da pasta passa a aparecer antes do <code>%</code>.</li>
+      </ol>
+      <div class="cc"><code>cd </code><button type="button">Copiar</button></div>
+      <ul class="tips">
+        <li>Arraste a <b>pasta</b> inteira, não um arquivo de dentro dela.</li>
+        <li>Se soltou antes de digitar o <code>cd</code>, ou se algo saiu errado, apague a linha com <kbd>control</kbd> + <kbd>U</kbd> e comece de novo.</li>
+        <li>Se o Mac perguntar se o Terminal pode acessar a pasta Transferências, clique em <b>Permitir</b>.</li>
+      </ul>
+    </div>
+
+    <div class="demo">
+      <figure class="stage" id="stage" aria-label="Animação: arrastar a pasta do Finder para o Terminal">
+        <div class="desk">
+          <div class="win finder sw-f">
+            <div class="bar"><i></i><i></i><i></i><span class="title">Transferências</span></div>
+            <div class="body">
+              <div class="s-ic" id="s-folder"><span class="folder"></span>Universal2026 - Pacote Laerte</div>
+              <div class="s-ic"><span class="zip"></span>Universal2026 - Pacote Laerte.zip</div>
+            </div>
+          </div>
+          <div class="win term sw-t">
+            <div class="bar"><i></i><i></i><i></i><span class="title">-zsh</span></div>
+            <div class="body tb" id="s-term"><span class="ps">seunome@MacBook ~ %</span> <span id="s-cmd"></span><span id="s-path" class="drop"></span><span class="caret" id="s-caret"></span><span id="s-next"></span></div>
+          </div>
+          <div class="ghost" id="s-ghost"><span class="folder"></span></div>
+          <svg class="cursor" id="s-cursor" viewBox="0 0 16 24" aria-hidden="true"><path d="M1 1 L1 19 L5.5 14.8 L8.6 22 L11.4 20.8 L8.4 13.8 L14.5 13.8 Z" fill="#fff" stroke="#000" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+      </figure>
+      <ol class="phases" id="phases">
+        <li data-p="1">Digite <code>cd</code> e espaço</li>
+        <li data-p="2">Clique na pasta e segure</li>
+        <li data-p="3">Arraste até o Terminal e solte</li>
+        <li data-p="4">Aperte Enter</li>
+      </ol>
+      <button type="button" class="pause" id="s-pause">Pausar</button>
+    </div>
+  </div>
+
+  <!-- 2.3 -->
+  <div class="sub-step">
+    <div class="txt">
+      <h3><span class="k">2.3</span> Conferir</h3>
+      <p>Digite <code>ls</code> e aperte <kbd>Enter</kbd>. Tem que aparecer a lista de arquivos da pasta, com <code>codigo</code> perto do fim. Se aparecer outra coisa, repita o 2.2.</p>
+      <div class="cc"><code>ls</code><button type="button">Copiar</button></div>
+      <p class="note">No Terminal a pasta Transferências aparece como <code>Downloads</code>. É a mesma pasta.</p>
+      <details>
+        <summary>Outra forma de entrar na pasta: botão direito</summary>
+        <p>Precisa ativar uma vez: menu da maçã (canto superior esquerdo) › <b>Ajustes do Sistema</b> › <b>Teclado</b> › botão <b>Atalhos de Teclado…</b> › <b>Serviços</b> › <b>Arquivos e Pastas</b> › marque <b>Novo Terminal na Pasta</b>.</p>
+        <p>Depois disso, clique com o botão direito na pasta (ou control + clique) › <b>Serviços</b> › <b>Novo Terminal na Pasta</b>. O Terminal já abre dentro dela, sem precisar arrastar.</p>
+        <div class="menu">
+          <div>Abrir</div><div>Abrir em Nova Aba</div><hr><div>Obter Informações</div><div>Renomear</div><div>Comprimir “Universal2026 - Pacote Laerte”</div><hr>
+          <div class="sub">Serviços <span>›</span>
+            <div class="submenu"><div class="on">Novo Terminal na Pasta</div><div>Nova Aba do Terminal na Pasta</div></div>
+          </div>
+        </div>
+      </details>
+    </div>
+    <div class="shots">
+      <figure class="win term" data-play>
+        <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte — -zsh — 80×24</span></div>
+        <div class="body tb">
+          <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="ls">ls</span></div>
+          <div class="ln o">Auditoria - Inconsistencias Pontuacao Universal 2026.xlsx
 CA-CG - Planilha Final de Pontuação - Edital Universal - v8.xlsx
 Chamada_Universal_06_2026_corrigida_24julho2026.pdf
 Demanda Universal 2026.xlsx
@@ -165,16 +210,84 @@ TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026
 Ultima Versao Planilha Vertical de Pontuação TI CNPq-23set26.xlsx
 <span class="hl">codigo</span>
 scimagojr 2025.csv</div>
-        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="caret"></span></div>
+          <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="caret"></span></div>
+        </div>
+        <button type="button" class="replay">Reproduzir</button>
+      </figure>
+      <p class="cap"><code>seunome</code> e <code>MacBook</code> mudam de Mac para Mac.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PASSO 3 ============ -->
+<section class="step wide" id="p3">
+  <div class="txt">
+    <p class="n">Passo 3</p>
+    <h2>Ver se já tem Python</h2>
+    <p>No Terminal, digite o comando abaixo e aperte <kbd>Enter</kbd>. Veja qual das três respostas apareceu.</p>
+    <div class="cc"><code>python3 --version</code><button type="button">Copiar</button></div>
+  </div>
+  <div class="outcomes">
+    <figure class="oc good">
+      <p class="oc-h"><b>A</b> Apareceu um número de versão</p>
+      <div class="win term mini"><div class="body tb"><span class="ps">… %</span> python3 --version
+Python 3.9.6</div></div>
+      <p><b>Já tem Python.</b> Qualquer versão a partir de 3.9 serve. Pule para o <a href="#p4">passo 4</a>.</p>
+    </figure>
+    <figure class="oc bad">
+      <p class="oc-h"><b>B</b> Abriu uma janela pedindo para instalar ferramentas</p>
+      <div class="dlg">
+        <span class="alert-ic">&gt;_</span>
+        <p>O comando “python3” requer as ferramentas de desenvolvedor de linha de comando. Deseja instalar as ferramentas agora?</p>
+        <div class="alert-btns"><span class="btn">Obter Xcode</span><span class="btn hi">Agora Não</span><span class="btn">Instalar</span></div>
       </div>
-      <button type="button" class="replay">Reproduzir</button>
+      <p><b>Não tem Python.</b> Clique em <b>Agora Não</b> e siga para <a href="#px">Instalar o Python</a>.</p>
     </figure>
-    <p class="cap">O texto em azul é o que aparece quando você solta a pasta no Terminal. <code>seunome</code> e <code>MacBook</code> mudam de Mac para Mac.</p>
-    <figure class="alert">
-      <span class="alert-ic">&gt;_</span>
-      <p><b>“Terminal” gostaria de acessar arquivos na sua pasta Transferências.</b></p>
-      <div class="alert-btns"><span class="btn">Não Permitir</span><span class="btn pri">Permitir</span></div>
+    <figure class="oc bad">
+      <p class="oc-h"><b>C</b> Apareceu “command not found”</p>
+      <div class="win term mini"><div class="body tb"><span class="ps">… %</span> python3 --version
+zsh: command not found: python3</div></div>
+      <p><b>Não tem Python.</b> Siga para <a href="#px">Instalar o Python</a>.</p>
     </figure>
+  </div>
+</section>
+
+<!-- ============ OPCIONAL ============ -->
+<section class="step optional" id="px">
+  <div class="txt">
+    <p class="n opt">Só se no passo 3 deu B ou C</p>
+    <h2>Instalar o Python</h2>
+    <p>Se no passo 3 apareceu a versão do Python, pule esta parte.</p>
+    <ol>
+      <li>Abra <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a> e clique no botão amarelo <b>Download Python 3.x.x</b>.</li>
+      <li>Abra o arquivo baixado (<code>python-3.x.x-macos11.pkg</code>, na pasta Transferências).</li>
+      <li>Clique em <b>Continuar</b> em cada tela. Na licença, clique em <b>Concordo</b>. Depois, <b>Instalar</b>, e digite a senha do Mac.</li>
+      <li>No fim, clique em <b>Fechar</b>. Pode fechar também a janela do Finder que abre sozinha.</li>
+      <li><b>Feche o Terminal</b> com <kbd>⌘ command</kbd> + <kbd>Q</kbd>, abra de novo, refaça o <a href="#p2">passo 2</a> e confira com <code>python3 --version</code>.</li>
+    </ol>
+    <p class="note">O Terminal só enxerga o Python novo depois de ser fechado e aberto de novo.</p>
+  </div>
+  <div class="shots">
+    <figure class="win browser">
+      <div class="bar"><i></i><i></i><i></i><span class="url">python.org/downloads/</span></div>
+      <div class="body pyorg">
+        <p class="pyh">Download the latest version for macOS</p>
+        <span class="pybtn">Download Python 3.x.x</span>
+      </div>
+    </figure>
+    <figure class="win installer">
+      <div class="bar"><i></i><i></i><i></i><span class="title">Instalar Python</span></div>
+      <div class="body inst">
+        <ul class="inst-side">
+          <li class="on">Introdução</li><li>Leia-me</li><li>Licença</li><li>Destino</li><li>Tipo de Instalação</li><li>Instalação</li><li>Resumo</li>
+        </ul>
+        <div class="inst-main">
+          <span class="ph"></span><span class="ph"></span><span class="ph s"></span>
+          <div class="inst-btns"><span class="btn">Voltar</span><span class="btn pri">Continuar</span></div>
+        </div>
+      </div>
+    </figure>
+    <p class="seq">Continuar › Continuar › Continuar › <b>Concordo</b> › <b>Instalar</b> › senha › <b>Fechar</b></p>
   </div>
 </section>
 
@@ -183,25 +296,21 @@ scimagojr 2025.csv</div>
   <div class="txt">
     <p class="n">Passo 4 <span>só na primeira vez</span></p>
     <h2>Instalar as bibliotecas</h2>
-    <p>Com o Terminal aberto na pasta, confira se o Python está instalado:</p>
-    <div class="cc"><code>python3 --version</code><button type="button">Copiar</button></div>
-    <p>Deve responder <code>Python 3.</code> seguido da versão. Depois instale as duas bibliotecas que os scripts usam:</p>
+    <p>Os scripts usam duas bibliotecas do Python. Com o Terminal na pasta, rode:</p>
     <div class="cc"><code>python3 -m pip install pandas openpyxl</code><button type="button">Copiar</button></div>
-    <p>Espere o <code>%</code> voltar. Deu certo se a última linha começar com <code>Successfully installed</code>. Se aparecer um aviso de que há uma versão nova do pip, ignore.</p>
+    <p>Espere o <code>%</code> voltar. Deu certo se a última linha começar com <code>Successfully installed</code>. Avisos em amarelo sobre versão nova do pip podem ser ignorados.</p>
     <p class="note">No Mac o comando é sempre <code>python3</code>, nunca <code>python</code>.</p>
   </div>
   <div class="shots">
     <figure class="win term" data-play>
       <div class="bar"><i></i><i></i><i></i><span class="title">Universal2026 - Pacote Laerte — -zsh — 80×24</span></div>
       <div class="body tb">
-        <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 --version">python3 --version</span></div>
-        <div class="ln o">Python 3.14.2</div>
         <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="cmd" data-t="python3 -m pip install pandas openpyxl">python3 -m pip install pandas openpyxl</span></div>
         <div class="ln o">Collecting pandas
 Collecting openpyxl
 <span class="gap">(várias linhas de download)</span>
-Installing collected packages: pytz, tzdata, six, numpy, et-xmlfile, python-dateutil, openpyxl, pandas
-<span class="ok">Successfully installed</span> et-xmlfile-2.0.0 numpy-2.3.4 openpyxl-3.1.5 pandas-2.3.3 python-dateutil-2.9.0.post0 pytz-2025.2 six-1.17.0 tzdata-2025.2</div>
+Installing collected packages: …
+<span class="ok">Successfully installed</span> … openpyxl-3.1.5 pandas-2.3.3 …</div>
         <div class="ln"><span class="ps">seunome@MacBook Universal2026 - Pacote Laerte %</span> <span class="caret"></span></div>
       </div>
       <button type="button" class="replay">Reproduzir</button>
@@ -260,7 +369,7 @@ NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
     <p>Dê dois cliques na planilha no Finder, ou abra pelo Terminal:</p>
     <div class="cc"><code>open "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx"</code><button type="button">Copiar</button></div>
     <p>Use o Excel. Os comentários das colunas T a Y aparecem ao passar o mouse sobre as células. O Numbers abre o arquivo, mas não salve por cima com ele.</p>
-    <p class="note">Das próximas vezes: passo 3 (abrir o Terminal na pasta) e passo 5 (rodar).</p>
+    <p class="note">Das próximas vezes: passo 2 (abrir o Terminal na pasta) e passo 5 (rodar).</p>
   </div>
 </section>
 
@@ -272,7 +381,7 @@ NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
     <thead><tr><th>Mensagem no Terminal</th><th>O que fazer</th></tr></thead>
     <tbody>
       <tr><td><code>command not found: python</code></td><td>Use <code>python3</code>.</td></tr>
-      <tr><td><code>command not found: python3</code>, ou janela pedindo “ferramentas de linha de comando”</td><td>O Python não foi instalado (passo 1), ou o Terminal estava aberto durante a instalação. Feche o Terminal com <kbd>⌘ Q</kbd>, abra de novo e refaça o passo 3.</td></tr>
+      <tr><td><code>command not found: python3</code> depois de instalar o Python</td><td>O Terminal estava aberto durante a instalação. Feche com <kbd>⌘ Q</kbd>, abra de novo e refaça o passo 2.</td></tr>
       <tr><td><code>ModuleNotFoundError: No module named 'pandas'</code> (ou <code>'openpyxl'</code>)</td><td>Faça o passo 4.</td></tr>
       <tr><td><code>error: externally-managed-environment</code></td><td>
         O Python instalado é o do Homebrew. Rode estes três comandos, um de cada vez:
@@ -282,8 +391,8 @@ NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
         Toda vez que abrir o Terminal, rode o comando do meio antes do passo 5.
       </td></tr>
       <tr><td><code>cd: no such file or directory</code></td><td>Digite <code>cd</code>, um espaço, e arraste a pasta de novo. Não digite o caminho à mão.</td></tr>
-      <tr><td><code>can't open file … VERIFICA_PLANILHA_LAERTE.py</code> ou <code>FileNotFoundError … .xlsx</code></td><td>O Terminal não está na pasta certa, ou algum arquivo foi renomeado ou movido. Rode <code>ls</code> e compare com a lista do passo 3.</td></tr>
-      <tr><td><code>PermissionError</code> ou <code>Operation not permitted</code></td><td>Feche a planilha no Excel. Se continuar, vá em  › Ajustes do Sistema › Privacidade e Segurança › Arquivos e Pastas › Terminal e ative <b>Pasta Transferências</b>.</td></tr>
+      <tr><td><code>can't open file … VERIFICA_PLANILHA_LAERTE.py</code> ou <code>FileNotFoundError … .xlsx</code></td><td>O Terminal não está na pasta certa, ou algum arquivo foi renomeado ou movido. Rode <code>ls</code> e compare com a lista do passo 2.3.</td></tr>
+      <tr><td><code>PermissionError</code> ou <code>Operation not permitted</code></td><td>Feche a planilha no Excel. Se continuar, vá em menu da maçã › Ajustes do Sistema › Privacidade e Segurança › Arquivos e Pastas › Terminal e ative <b>Pasta Transferências</b>.</td></tr>
     </tbody>
   </table>
   </div>

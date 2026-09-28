@@ -73,3 +73,107 @@ if (!reduce && 'IntersectionObserver' in window) {
   }, { threshold: 0.6 });
   document.querySelectorAll('[data-play]').forEach(function (t) { io.observe(t); });
 }
+
+// Animação: arrastar a pasta do Finder para o Terminal
+(function () {
+  var stage = document.getElementById('stage');
+  if (!stage) return;
+  var $ = function (id) { return document.getElementById(id); };
+  var cursor = $('s-cursor'), ghost = $('s-ghost'), folder = $('s-folder');
+  var cmd = $('s-cmd'), path = $('s-path'), caret = $('s-caret'), next = $('s-next');
+  var term = stage.querySelector('.sw-t');
+  var phases = document.querySelectorAll('#phases li');
+  var btn = $('s-pause');
+  var PATH = '/Users/seunome/Downloads/Universal2026\\ -\\ Pacote\\ Laerte ';
+  var PROMPT = 'seunome@MacBook Universal2026 - Pacote Laerte %';
+  var paused = false, visible = false;
+
+  function phase(n) { phases.forEach(function (li) { li.classList.toggle('on', +li.dataset.p === n); }); }
+  function pos(el, x, y) { el.style.left = x + '%'; el.style.top = y + '%'; }
+  function folderPoint() {
+    var s = stage.getBoundingClientRect(), f = folder.querySelector('.folder').getBoundingClientRect();
+    return {
+      x: (f.left + f.width / 2 - s.left) / s.width * 100,
+      y: (f.top + f.height / 2 - s.top) / s.height * 100,
+      gx: (f.left - s.left) / s.width * 100,
+      gy: (f.top - s.top) / s.height * 100
+    };
+  }
+  async function wait(ms) {
+    var t = 0;
+    while (t < ms || paused || !visible) {
+      await new Promise(function (r) { setTimeout(r, 50); });
+      if (!paused && visible) t += 50;
+    }
+  }
+  function reset() {
+    cmd.textContent = ''; path.textContent = ''; next.innerHTML = '';
+    caret.hidden = false; ghost.classList.remove('on'); folder.classList.remove('picked');
+    term.classList.remove('hot'); cursor.classList.remove('down', 'slow'); path.classList.remove('flash');
+    pos(cursor, 30, 82); phase(0);
+  }
+  function finalFrame() {
+    reset(); cmd.textContent = 'cd '; path.textContent = PATH; phase(3);
+  }
+
+  async function loop() {
+    for (;;) {
+      reset();
+      await wait(900);
+      phase(1);
+      for (var c of 'cd ') { cmd.textContent += c; await wait(260); }
+      await wait(700);
+
+      phase(2);
+      var p = folderPoint();
+      pos(cursor, p.x, p.y);
+      await wait(1100);
+      cursor.classList.add('down');
+      folder.classList.add('picked');
+      ghost.style.transition = 'none';
+      pos(ghost, p.gx, p.gy);
+      void ghost.offsetWidth;
+      ghost.style.transition = '';
+      ghost.classList.add('on');
+      await wait(700);
+
+      phase(3);
+      var dx = 70, dy = 52;
+      cursor.classList.add('slow');
+      pos(cursor, dx, dy);
+      pos(ghost, dx - (p.x - p.gx), dy - (p.y - p.gy));
+      await wait(900);
+      term.classList.add('hot');
+      await wait(600);
+      cursor.classList.remove('down', 'slow');
+      ghost.classList.remove('on');
+      folder.classList.remove('picked');
+      term.classList.remove('hot');
+      path.textContent = PATH;
+      path.classList.add('flash');
+      await wait(2000);
+
+      phase(4);
+      caret.hidden = true;
+      next.innerHTML = '\n<span class="ps">' + PROMPT + '</span> <span class="caret"></span>';
+      await wait(3200);
+    }
+  }
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    finalFrame();
+    btn.hidden = true;
+    return;
+  }
+  btn.addEventListener('click', function () {
+    paused = !paused;
+    btn.textContent = paused ? 'Continuar' : 'Pausar';
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.3 }).observe(stage);
+  } else {
+    visible = true;
+  }
+  finalFrame();
+  loop();
+})();
