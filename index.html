@@ -135,7 +135,6 @@
         <li>Solte. O caminho da pasta aparece escrito depois do <code>cd</code>.</li>
         <li>Agora sim, aperte <kbd>Enter</kbd>. O nome da pasta passa a aparecer antes do <code>%</code>.</li>
       </ol>
-      <div class="cc"><code>cd </code><button type="button">Copiar</button></div>
       <ul class="tips">
         <li>Arraste a <b>pasta</b> inteira, não um arquivo de dentro dela.</li>
         <li>Se soltou antes de digitar o <code>cd</code>, ou se algo saiu errado, apague a linha com <kbd>control</kbd> + <kbd>U</kbd> e comece de novo.</li>
@@ -175,8 +174,13 @@
   <div class="sub-step">
     <div class="txt">
       <h3><span class="k">2.3</span> Conferir</h3>
-      <p>Digite <code>ls</code> e aperte <kbd>Enter</kbd>. Tem que aparecer a lista de arquivos da pasta, com <code>codigo</code> perto do fim. Se aparecer outra coisa, repita o 2.2.</p>
-      <div class="cc"><code>ls</code><button type="button">Copiar</button></div>
+      <p>Confirme que o Terminal está na pasta certa.</p>
+      <ol>
+        <li>Clique em <b>Copiar</b> neste comando:<div class="cc"><code>ls</code><button type="button">Copiar</button></div></li>
+        <li>Clique dentro da janela do Terminal e cole com <kbd>⌘ command</kbd> + <kbd>V</kbd>. O comando aparece escrito depois do <code>%</code>.</li>
+        <li>Aperte <kbd>Enter</kbd>.</li>
+        <li>Confira: aparece a lista de arquivos da pasta, com <code>codigo</code> perto do fim, como na imagem. Se aparecer outra coisa, repita o 2.2.</li>
+      </ol>
       <p class="note">No Terminal a pasta Transferências aparece como <code>Downloads</code>. É a mesma pasta.</p>
       <details>
         <summary>Outra forma de entrar na pasta: botão direito</summary>
@@ -224,8 +228,12 @@ scimagojr 2025.csv</div>
   <div class="txt">
     <p class="n">Passo 3</p>
     <h2>Ver se já tem Python</h2>
-    <p>No Terminal, digite o comando abaixo e aperte <kbd>Enter</kbd>. Veja qual das três respostas apareceu.</p>
-    <div class="cc"><code>python3 --version</code><button type="button">Copiar</button></div>
+    <ol>
+      <li>Clique em <b>Copiar</b> neste comando:<div class="cc"><code>python3 --version</code><button type="button">Copiar</button></div></li>
+      <li>Clique dentro da janela do Terminal e cole com <kbd>⌘ command</kbd> + <kbd>V</kbd>. O comando aparece escrito depois do <code>%</code>.</li>
+      <li>Aperte <kbd>Enter</kbd>.</li>
+      <li>Veja qual das três respostas abaixo apareceu e siga o que está escrito nela.</li>
+    </ol>
   </div>
   <div class="outcomes">
     <figure class="oc good">
@@ -296,9 +304,14 @@ zsh: command not found: python3</div></div>
   <div class="txt">
     <p class="n">Passo 4 <span>só na primeira vez</span></p>
     <h2>Instalar as bibliotecas</h2>
-    <p>Os scripts usam duas bibliotecas do Python. Com o Terminal na pasta, rode:</p>
-    <div class="cc"><code>python3 -m pip install pandas openpyxl</code><button type="button">Copiar</button></div>
-    <p>Espere o <code>%</code> voltar. Deu certo se a última linha começar com <code>Successfully installed</code>. Avisos em amarelo sobre versão nova do pip podem ser ignorados.</p>
+    <p>Os scripts usam duas bibliotecas do Python (pandas e openpyxl). Instale-as assim:</p>
+    <ol>
+      <li>Clique em <b>Copiar</b> neste comando:<div class="cc"><code>python3 -m pip install pandas openpyxl</code><button type="button">Copiar</button></div></li>
+      <li>Clique dentro da janela do Terminal e cole com <kbd>⌘ command</kbd> + <kbd>V</kbd>. O comando aparece escrito depois do <code>%</code>.</li>
+      <li>Aperte <kbd>Enter</kbd>.</li>
+      <li>Espere. Vão aparecer várias linhas e pode levar um ou dois minutos. Terminou quando o <code>%</code> aparecer de novo na última linha.</li>
+      <li>Confira: a linha logo acima do <code>%</code> começa com <code>Successfully installed</code>. Avisos sobre versão nova do pip podem ser ignorados.</li>
+    </ol>
     <p class="note">No Mac o comando é sempre <code>python3</code>, nunca <code>python</code>.</p>
   </div>
   <div class="shots">
@@ -325,17 +338,28 @@ Installing collected packages: …
     <p class="n">Passo 5</p>
     <h2>Gerar e conferir a planilha</h2>
 
-    <h3>5.1 Gerar</h3>
-    <p>O script lê as três planilhas originais da pasta (v8, Editável Demanda e Vertical da TI) e monta a planilha <code>TRABALHO LAERTE - …xlsx</code>.</p>
-    <p class="note warn">A planilha gerada <b>substitui</b> a que está na pasta. Se você já preencheu alguma nota nela, faça uma cópia antes com o comando abaixo. Feche a planilha no Excel antes de rodar.</p>
-    <div class="cc"><code>cp "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx" "COPIA - planilha preenchida.xlsx"</code><button type="button">Copiar</button></div>
-    <div class="cc"><code>python3 codigo/GERA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div>
-    <p>Deu certo se aparecer <code>OK - arquivo gerado:</code> seguido do caminho da planilha.</p>
+    <h3>5.1 Gerar a planilha</h3>
+    <p>Este comando lê as três planilhas originais da pasta (v8, Editável Demanda e Vertical da TI) e monta a planilha <code>TRABALHO LAERTE - …xlsx</code>, substituindo a que está na pasta.</p>
+    <div class="note warn">
+      <p><b>Só se você já preencheu notas nessa planilha:</b> antes de gerar, salve uma cópia. Copie o comando abaixo, cole no Terminal e aperte <kbd>Enter</kbd>. Se ainda não preencheu nada, pule.</p>
+      <div class="cc"><code>cp "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx" "COPIA - planilha preenchida.xlsx"</code><button type="button">Copiar</button></div>
+    </div>
+    <ol>
+      <li>Se a planilha estiver aberta no Excel, feche.</li>
+      <li>Clique em <b>Copiar</b> neste comando:<div class="cc"><code>python3 codigo/GERA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div></li>
+      <li>Clique dentro da janela do Terminal e cole com <kbd>⌘ command</kbd> + <kbd>V</kbd>. O comando aparece escrito depois do <code>%</code>.</li>
+      <li>Aperte <kbd>Enter</kbd> e espere o <code>%</code> aparecer de novo (alguns segundos).</li>
+      <li>Confira: apareceu <code>OK - arquivo gerado:</code> seguido do caminho da planilha.</li>
+    </ol>
 
-    <h3>5.2 Conferir</h3>
-    <p>O script de conferência gera a planilha de novo, num arquivo temporário, e compara célula por célula com a da pasta. Depois refaz a conta dos capítulos por outro caminho. Não altera nada.</p>
-    <div class="cc"><code>python3 codigo/VERIFICA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div>
-    <p>Deu certo se terminar com <code>OK: (1) 100% IDENTICO</code>. Se a planilha já tiver notas preenchidas à mão, ele lista as diferenças; nesse caso é esperado.</p>
+    <h3>5.2 Conferir a planilha gerada</h3>
+    <p>Este comando gera a planilha de novo, num arquivo temporário, e compara célula por célula com a da pasta. Depois refaz a conta dos capítulos por outro caminho. Não altera nada.</p>
+    <ol>
+      <li>Clique em <b>Copiar</b> neste comando:<div class="cc"><code>python3 codigo/VERIFICA_PLANILHA_LAERTE.py</code><button type="button">Copiar</button></div></li>
+      <li>Clique dentro da janela do Terminal e cole com <kbd>⌘ command</kbd> + <kbd>V</kbd>. O comando aparece escrito depois do <code>%</code>.</li>
+      <li>Aperte <kbd>Enter</kbd> e espere o <code>%</code> aparecer de novo (alguns segundos).</li>
+      <li>Confira: o resultado no fim começa com <code>OK: (1) 100% IDENTICO</code>. Se a planilha já tiver notas preenchidas à mão, ele lista as diferenças; nesse caso é esperado.</li>
+    </ol>
   </div>
   <div class="shots">
     <figure class="win term" data-play>
@@ -369,8 +393,11 @@ NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
   <div class="txt">
     <p class="n">Passo 6</p>
     <h2>Abrir a planilha</h2>
-    <p>Dê dois cliques na planilha no Finder, ou abra pelo Terminal:</p>
-    <div class="cc"><code>open "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx"</code><button type="button">Copiar</button></div>
+    <p>Escolha uma das duas formas:</p>
+    <ul>
+      <li><b>Pelo Finder:</b> dê dois cliques na planilha <code>TRABALHO LAERTE - …xlsx</code> dentro da pasta.</li>
+      <li><b>Pelo Terminal:</b> copie o comando abaixo, cole no Terminal e aperte <kbd>Enter</kbd>.<div class="cc"><code>open "TRABALHO LAERTE - Planilha de Pontuação (19 propostas) - Edital Universal 2026.xlsx"</code><button type="button">Copiar</button></div></li>
+    </ul>
     <p>Use o Excel. Os comentários das colunas T a Y aparecem ao passar o mouse sobre as células. O Numbers abre o arquivo, mas não salve por cima com ele.</p>
     <p class="note">Das próximas vezes: passo 2 (abrir o Terminal na pasta) e passo 5 (gerar e conferir).</p>
   </div>
@@ -387,11 +414,11 @@ NUMERO de capitulos (&lt;=5), coerentes com a formula AD da v8.</div>
       <tr><td><code>command not found: python3</code> depois de instalar o Python</td><td>O Terminal estava aberto durante a instalação. Feche com <kbd>⌘ Q</kbd>, abra de novo e refaça o passo 2.</td></tr>
       <tr><td><code>ModuleNotFoundError: No module named 'pandas'</code> (ou <code>'openpyxl'</code>)</td><td>Faça o passo 4.</td></tr>
       <tr><td><code>error: externally-managed-environment</code></td><td>
-        O Python instalado é o do Homebrew. Rode estes três comandos, um de cada vez:
+        O Python instalado é o do Homebrew. Para cada um dos três comandos abaixo, na ordem: copie, cole no Terminal, aperte <kbd>Enter</kbd> e espere o <code>%</code> voltar.
         <div class="cc"><code>python3 -m venv ~/venv-planilha</code><button type="button">Copiar</button></div>
         <div class="cc"><code>source ~/venv-planilha/bin/activate</code><button type="button">Copiar</button></div>
         <div class="cc"><code>pip install pandas openpyxl</code><button type="button">Copiar</button></div>
-        Toda vez que abrir o Terminal, rode o comando do meio antes do passo 5.
+        Depois disso, toda vez que abrir o Terminal, rode o comando do meio antes do passo 5.
       </td></tr>
       <tr><td><code>cd: no such file or directory</code></td><td>Digite <code>cd</code>, um espaço, e arraste a pasta de novo. Não digite o caminho à mão.</td></tr>
       <tr><td><code>can't open file … VERIFICA_PLANILHA_LAERTE.py</code> ou <code>FileNotFoundError … .xlsx</code></td><td>O Terminal não está na pasta certa, ou algum arquivo foi renomeado ou movido. Rode <code>ls</code> e compare com a lista do passo 2.3.</td></tr>

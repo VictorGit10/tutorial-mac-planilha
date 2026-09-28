@@ -379,3 +379,7 @@ kbd.big.wide { min-width: 80px; font-size: 12px; font-family: var(--sans); }
 .ghost { visibility: hidden; }
 .ghost.on { visibility: visible; }
 .ghost .folder { display: block; }
+.txt li .cc, .note .cc { margin-top: 8px; }
+.note p { margin: 0; }
+.txt ul { padding-left: 22px; margin-bottom: 0; }
+.txt ul li + li { margin-top: 8px; }
